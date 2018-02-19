@@ -1,12 +1,101 @@
-\documentclass[12pt]{report}
-\usepackage{style/uno-thesis}
+%%
+%% This is based on file `skeleton.tex' that came with the nuthesis package
+%% 
+
+%%
+%% For common degrees, you can use the class options:
+%% phd, edd, ms, ma
+%% phd is the default
+\documentclass[print,ms]{unothesis}
+
+\usepackage{hyperref} % to hyperlink the table of contents
+\hypersetup{linktocpage, pdfborder=0 0 0} % hyperref option to hyperlink the page number only, not the section title
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{setspace}
+\usepackage{listings}
+\usepackage{color}
+%\usepackage{tcolorbox}
+
+%\graphicspath{ {images/} }
+
 \begin{document}
+%% Start formatting the first few special pages
+%% frontmatter is needed to set the page numbering correctly
+\frontmatter
 
-	\author{Abhishek Kumar}
-	\title{ Testing machine learning algorithms without oracle }
-	\maketitle
+\title{Testing machine learning algorithms without oracle}
+\author{Abhishek Kumar}
+\adviser{Harvey Siy, Ph.D.}
+\adviserAbstract{Harvey Siy, Ph.D.}
+\membera{Myoungkyu Song, Ph.D.}
+\memberb{Matthew Hale, Ph.D.}
+\memberc{}
+\major{Computer Science}
+\degreemonth{May}
+\degreeyear{2018}
+%%
+%% For most people the defaults will be correct, so they are commented
+%% out. To manually set these, just uncomment and make the needed
+%% changes.
+%% \college{Your college}
+%% \city{Your City}
+%%
+%% For most people the following can be changed with a class
+%% option. To manually set these, just uncomment the following and
+%% make the needed changes.
+%%\doctype{Thesis Proposal}
+%% \degree{Your degree}
+%% \degreeabbreviation{Your degree abbr.}
+%%
+%% Now that we know everything we need, we can generate the title page
+%% itself.
+%%
 
-	\chapter*{Abstract}
+\maketitle
+
+%%
+%% You have a maximum of 350 words for your abstract, which includes
+%% your title, name, etc.
+%%
+%% Required
+\begin{abstract}
+Abstract here
+\end{abstract}
+
+%% Optional
+%% \begin{copyrightpage}
+%% \end{copyrightpage}
+
+%% Optional
+%% \begin{dedication}
+%% \end{dedication}
+
+%% Optional
+\begin{acknowledgments}
+Acknowledgments here
+\end{acknowledgments}
+
+%% Optional
+%% \begin{grantinfo}
+%% \end{grantinfo}
+%% The ToC is required
+%% Uncomment these if need be
+
+%% The ToC is required
+\tableofcontents
+%% Uncomment these if need be
+\listoffigures
+\listoftables
+%%
+%% ``Real'' beginning of the document.
+%% mainmatter is needed to set the page numbering correctly
+%%   mainmatter is needed after the ToC, (LoF, and LoT) to set the
+%%   page numbering correctly for the main body
+\mainmatter
+
+
+
 	
 	\chapter{Introduction}
 	% talk about motivations - increasing popularity of machine learning in different applications, few research on reliaibility of these algorithms, lack of oracles
@@ -24,6 +113,17 @@
 	% maybes: MartiRank, SVM-Light, PAYL
 	
 	\chapter{Work Plan}
+
+
+%% backmatter is needed at the end of the main body of your thesis to
+%% set up page numbering correctly for the remainder of the thesis
+\backmatter
+
+%% Start the correct formatting for the appendices
+\appendix
+
+%% Appendices go here (if you have them)
+
 	
 	\nocite{*}
 	\bibliographystyle{plain}
