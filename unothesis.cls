@@ -183,7 +183,7 @@ by\\[1\baselineskip]
 \nu@adviser\\[\baselineskip]
 \nu@membera\\[\baselineskip]
 \nu@memberb\\[\baselineskip]
-\nu@memberc\\[\baselineskip]
+\nu@memberc
 \end{center}
 \thispagestyle{empty}
 \cleardoublepage
