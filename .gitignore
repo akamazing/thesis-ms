@@ -7,3 +7,5 @@
 *.lof
 *.lot
 *.out
+*.fdb_latexmk
+*.fls

@@ -1,13 +1,6 @@
-%%
-%% This is based on file `skeleton.tex' that came with the nuthesis package
-%% 
+\documentclass[print,ms]{style/unothesis}
 
-%%
-%% For common degrees, you can use the class options:
-%% phd, edd, ms, ma
-%% phd is the default
-\documentclass[print,ms]{unothesis}
-
+\usepackage{style/import}
 \usepackage{hyperref} % to hyperlink the table of contents
 \hypersetup{linktocpage, pdfborder=0 0 0} % hyperref option to hyperlink the page number only, not the section title
 \usepackage{graphicx}
@@ -15,6 +8,8 @@
 \usepackage{setspace}
 \usepackage{listings}
 \usepackage{color}
+\usepackage{geometry}
+
 %\usepackage{tcolorbox}
 
 %\graphicspath{ {images/} }
@@ -30,9 +25,8 @@
 \adviserAbstract{Harvey Siy, Ph.D.}
 \membera{Myoungkyu Song, Ph.D.}
 \memberb{Matthew Hale, Ph.D.}
-\memberc{}
 \major{Computer Science}
-\degreemonth{May}
+\degreemonth{August}
 \degreeyear{2018}
 %%
 %% For most people the defaults will be correct, so they are commented
@@ -96,22 +90,22 @@ Acknowledgments here
 
 
 
-	
+
 	\chapter{Introduction}
 	% talk about motivations - increasing popularity of machine learning in different applications, few research on reliaibility of these algorithms, lack of oracles
-	
+
 	\chapter{Literature Review}
-	\section{Testing Without Oracles}
-	\section{Metamorphic Testing}
-	\section{Overview of Machine Learning Algorithms}
-	\section{Testing Machine Learning Programs}
-	
+  \import{chapters/litReview/}{litReview.tex}
+	\import{chapters/litReview/}{metamorphicTesting.tex}
+	\import{chapters/litReview/}{mlAlgo.tex}
+	\import{chapters/litReview/}{testMLprog.tex}
+
 	\chapter{Proposed Work}
-	\section{Setting up the Test Environment}
-	\section{Selection of Implementations to Test}
+	\import{chapters/proposedWork/}{environment.tex}
+	\import{chapters/proposedWork/}{implementation.tex}
 	% Weka, BioWeka
 	% maybes: MartiRank, SVM-Light, PAYL
-	
+
 	\chapter{Work Plan}
 
 
@@ -124,9 +118,9 @@ Acknowledgments here
 
 %% Appendices go here (if you have them)
 
-	
+
 	\nocite{*}
 	\bibliographystyle{plain}
-	\bibliography{bibliography}
-	
+	\bibliography{bibliography/bibliography}
+
 \end{document}
