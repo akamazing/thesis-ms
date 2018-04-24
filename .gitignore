@@ -9,3 +9,5 @@
 *.out
 *.fdb_latexmk
 *.fls
+*.cache
+*.local
