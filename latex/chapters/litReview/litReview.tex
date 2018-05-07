@@ -1,1 +1,26 @@
 \section{Testing Without Oracles}
+The current testing research activities fall under three categories:
+Developing a sound theoretical basis for testing.
+Devising and improving testing methodologies, especially the mechanizable ones.
+Defining accurate measurement criteria for testing data adequately.
+An oracle is a system that determines the correctness of the solution by comparing the system’s output to the one that it predicts.
+A program is considered non-testable if one of the following two conditions occur:
+A oracle does not exist for the given problem.
+It is theoretically possible to determine the correct output but computationally very hard.
+The programs that don’t have oracles can be usually classified in three categories:
+Programs that were written to determine the correct answer.
+Programs that produce lot of outputs such that it is hard to verify all of them.
+Programs where tester have a misconceptions (tester believes that he has the oracle even though he might not).
+Pseudo Oracles/Dual Coding:
+Another set of program is written independently according to the same specification as the original program and the output from both the programs is compared. If the outputs match it can be asserted that the original results are according to the specification. The problem with dual coding is that it has a lot of overhead and requires more time and money. This is done only for highly critical softwares.
+While performing mathematical computations, errors from three sources can creep in:
+The mathematical model used to do the computations.
+Programs written to implement the computation.
+The features of the environment like: round-off, floating point operations etc.
+Even in the absence of oracles the users often have a ballpark idea of what the correct answer would look like without knowing the correct answer. In such cases we make use of partial oracles. It is relatively easier to test the systems on simpler inputs for which the output is known. The problem, of course, is that from experience we know that most errors occur in ‘complicated’ test-cases. It is common for central test cases to work and boundary cases to fail. From the above observations the authors make five recommendation for items to be considered as a part of documentation.
+The criteria used to select the test data.
+The degree to which the criteria was fulfilled.
+The test data, the program ran on.
+The output of each of each test datum.
+How the results were determined to be correct or acceptable.
+Although the recommendations do not solve the problem of non-testable programs but they do provide information on whether the program should be considered adequately tested or not.

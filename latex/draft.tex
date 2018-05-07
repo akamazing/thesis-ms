@@ -1,4 +1,4 @@
-\documentclass[print,ms]{style/unothesis}
+\documentclass[print,ms]{unothesis}
 
 \usepackage{style/import}
 \usepackage{hyperref} % to hyperlink the table of contents
@@ -89,13 +89,12 @@ Acknowledgments here
 \mainmatter
 
 
-
-
 	\chapter{Introduction}
-	% talk about motivations - increasing popularity of machine learning in different applications, few research on reliaibility of these algorithms, lack of oracles
+	\import{chapters/introduction/}{introduction.file}
+	 %talk about motivations - increasing popularity of machine learning in different applications, few research on reliaibility of these algorithms, lack of oracles
 
 	\chapter{Literature Review}
-  	\import{chapters/litReview/}{litReview.tex}
+  \import{chapters/litReview/}{litReview.tex}
 	\import{chapters/litReview/}{metamorphicTesting.tex}
 	\import{chapters/litReview/}{mlAlgo.tex}
 	\import{chapters/litReview/}{testMLprog.tex}
