@@ -1,2 +1,0 @@
-Machine learning algorithms are becoming increasingly complex and difficult to implement and analyze. While developing and training an implementation of a machine learning model the aim is to create a model that makes the best predictions.
-Lack of reliable oracles for testing machine learning algorithms makes it very hard to test such implementations. Such set of programs which does not have a test oracle that can predict the output on a set of inputs are called "non-testable programs"\cite{Murphy}.
