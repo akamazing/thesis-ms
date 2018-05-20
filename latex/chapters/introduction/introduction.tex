@@ -1,9 +1,9 @@
-Machine learning algorithms are becoming increasingly popular and is already being applied in different sectors. The rising popularity has created a demand for more complex and sophisticated  to implement and analyze. While developing and training an implementation of a machine learning model the aim is to create a model that makes the best predictions.
-Lack of reliable oracles for testing machine learning algorithms makes it very hard to test such implementations. Such set of programs which does not have a test oracle that can predict the output on a set of inputs are called \enquote{non-testable programs}\cite{Murphy}. Davis and Weyuker describe these set of programs as \enquote{Programs which were written in order to determine the answer in the first place. There would be no need to write such programs, if the correct answer were known}.
-In this paper we will explore the types of guarantees one can expect a machine learning model to possess.
+Machine learning algorithms are becoming increasingly popular and are already being applied in different sectors like: healthcare, finance, retail, etc.. This rising popularity has created a demand for more complex and sophisticated algorithms in order to implement state-of-the-art use cases. While developing and training an implementation of a machine learning model, the aim is to create a model that makes the best predictions.
+Lack of reliable oracles for testing machine learning algorithms makes it very hard to test the accuracy of such implementations. Such set of programs which does not have a test oracle that can predict the output on a set of inputs are called \enquote{non-testable programs}\cite{Murphy}. Davis and Weyuker describe these set of programs as \enquote{Programs which were written in order to determine the answer in the first place. There would be no need to write such programs, if the correct answer were known}. Most machine learning programs fall under this category as they are written in order to predict the correct answers in the first place. In this paper, we will explore the types of guarantees one can expect a machine learning model to possess based on the properties that the underlying algorithm of the implementation possess.
+\newline
 In order to design reliable systems, engineers typically engage in both testing and verification:
 \begin{itemize}
-  \item By testing, we mean evaluating the system in several conditions and observing its behavior, watching for defects.
+  \item By testing, we mean evaluating the system in several conditions and observing its behavior, watching for defects
 
   \item By verification, we mean producing a compelling argument that the system will not misbehave under a very broad range of circumstances.
 \end{itemize}
