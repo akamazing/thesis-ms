@@ -1,0 +1,28 @@
+
+\hyphenpenalty=5000
+% \begin{sidewaystable}
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+  Paper    & MRs used & Algorithms/Test Cases & Result of MT  \\ \hline
+  Application of Metamorphic Testing to Supervised Classifiers &
+  MRs for classification algorithms:
+  \begin{itemize}[leftmargin=10pt, labelindent=0pt, itemindent=0pt]
+    \item Consistency with affine transformation.
+    \item Permutation of class labels.
+    \item Permutation of attributes.
+    \item Addition of uninformative/informative attributes.
+    \item Consistency with re-prediction.
+    \item Addition of training samples.
+    \item Addition of classes by duplicating/re-labeling samples.
+    \item Removal of classes/samples.
+  \end{itemize}
+  & Package: Weka
+  Test Case: Randomly generated training and test data. The randomly generated data model does not encapsulate any domain knowledge.
+  & Only a subset of MRs were a necessary property of the corresponding algorithm.  Several MRs violated NBC algorithms.  In the case of kNN algorithm, none of the necessary MRs were violated \\
+  \hline
+% 13       & 20.3 $\pm$ 0.6    \\ \hline
+% 14       & 21.8 $\pm$ 0.7    \\ \hline
+% 15       & 20.9 $\pm$ 0.6    \\ \hline
+% 16       & 19.7 $\pm$ 0.4    \\ \hline
+\end{tabularx}
+% \end{sidewaystable}
