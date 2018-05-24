@@ -17,8 +17,8 @@
 \usepackage{forloop}
 \usepackage{tabularx}
 \usepackage{rotating}
-\usepackage{paralist}
-\usepackage{enumitem}
+\usepackage[shortlabels]{enumitem}
+\usepackage{longtable}
 
 
 %\usepackage{tcolorbox}
@@ -65,7 +65,7 @@
 %%
 %% Required
 \begin{abstract}
-Abstract here
+ Abstract here
 \end{abstract}
 
 %% Optional
@@ -78,7 +78,7 @@ Abstract here
 
 %% Optional
 \begin{acknowledgments}
-Acknowledgments here
+ Acknowledgments here
 \end{acknowledgments}
 
 %% Optional
@@ -100,32 +100,32 @@ Acknowledgments here
 \mainmatter
 
 
-	\chapter{Introduction}
-	\import{chapters/introduction/}{introduction.tex}
-	% \subfile{chapters/introduction/introduction}
-	 %talk about motivations - increasing popularity of machine learning in different applications, few research on reliaibility of these algorithms, lack of oracles
+\chapter{Introduction}
+\import{chapters/introduction/}{introduction.tex}
+% \subfile{chapters/introduction/introduction}
+%talk about motivations - increasing popularity of machine learning in different applications, few research on reliaibility of these algorithms, lack of oracles
 
-	\chapter{Literature Review}
-          \import{chapters/litReview/}{litReview.tex}
-	\import{chapters/litReview/}{metamorphicTesting.tex}
-	\import{chapters/litReview/}{mlAlgo.tex}
-	\import{chapters/litReview/}{testMLprog.tex}
+\chapter{Literature Review}
+\import{chapters/litReview/}{litReview.tex}
+\import{chapters/litReview/}{metamorphicTesting.tex}
+\import{chapters/litReview/}{mlAlgo.tex}
+\import{chapters/litReview/}{testMLprog.tex}
 
-	\chapter{Proposed Work}
-	\import{chapters/proposedWork/}{environment.tex}
-	\newpage
-	\import{chapters/proposedWork/}{implementation.tex}
-	%selection of MR
-	%Analysis of results
-	%No. of transformation before degrading
-	%individual analysis and then comparisio of algos.
-	% Weka, BioWeka
-	% maybes: MartiRank, SVM-Light, PAYL
+\chapter{Proposed Work}
+\import{chapters/proposedWork/}{environment.tex}
+\newpage
+\import{chapters/proposedWork/}{implementation.tex}
+%selection of MR
+%Analysis of results
+%No. of transformation before degrading
+%individual analysis and then comparisio of algos.
+% Weka, BioWeka
+% maybes: MartiRank, SVM-Light, PAYL
 
-	\chapter{Work Plan}
-	\import{chapters/proposedWork/}{workplan.tex}
-	\chapter{Synthesis Matrix}
-	\import{chapters/litReview/}{synthesisMatrix.tex}
+\chapter{Work Plan}
+\import{chapters/proposedWork/}{workplan.tex}
+\chapter{Synthesis Matrix}
+\import{chapters/litReview/}{synthesisMatrix.tex}
 
 %% backmatter is needed at the end of the main body of your thesis to
 %% set up page numbering correctly for the remainder of the thesis
@@ -137,8 +137,8 @@ Acknowledgments here
 %% Appendices go here (if you have them)
 
 
-	\nocite{*}
-	\bibliographystyle{plain}
-	\bibliography{bibliography/bibliography}
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{bibliography/bibliography}
 
 \end{document}
