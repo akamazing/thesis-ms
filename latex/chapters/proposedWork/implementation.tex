@@ -1,4 +1,4 @@
-\section{Selection of Implementations to Test}
+\section{Subject Programs}
 Various models from TensorFlow is being used at different organizations like Mozilla, Google, Stanford University, etc. in different domains extending from speech recognition to computer vision. To evaluate the accuracy of some of the popular algorithms used in supervised classification we decided to implement metamorphic testing of:
 \begin{itemize}
 \item K-Nearest Neighbors
@@ -6,4 +6,13 @@ Various models from TensorFlow is being used at different organizations like Moz
 \end{itemize}
 
 \section{Identification of Metamorphic Relations} \label{MRused}
-List of mrs
+Murphy et. al identified six metamorphic properties that they believe exist in many machine learning applications: additive, multiplicative, permutative, invertive, inclusive, and exclusive. We expect the neural networks to be resistant to these transformations and produce the same classifications before and after applying tranformations.
+
+\section{Generation of source test cases}
+Source test data
+
+\section{Generation of follow-up test cases}
+Follow-up data after applying MR
+
+\section{Evaluation metrics}
+How to evaluate
