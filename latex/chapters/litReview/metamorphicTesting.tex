@@ -1,5 +1,5 @@
 \section{Metamorphic Testing}
-	\subsection{A Survey on Metamorphic Testing}
+	\subsection{A Survey on Metamorphic Testing \cite{Segura2016}}
 		Segura et al. did an extensive review on metamorphic testing with 119 papers published between 1998 and 2015 to answer four important questions on metamorphic testing:
 		\begin{enumerate}
 			\item RQ1: What improvements to the technique have been made?
@@ -37,7 +37,7 @@
 
 
 
-	\subsection{Automatic System Testing of Programs without Test Oracles}
+	\subsection{Automatic System Testing of Programs without Test Oracles \cite{Murphy2009}}
 		In this paper the authors have demonstrated the usefulness of metamorphic testing in assessing the quality of applications without test oracles. Comparing the outputs of the morphed data still remains a challenge especially if the data set is large or not in human readable format. The authors presented an approach called ``Automated Metamorphic System Testing'' to automate the metamorphic testing by considering the system as a blackbox and checking if the metamorphic properties holds after execution of the system. They also present another approach “Heuristic Metamorphic Testing” to reduce false positives and address some non-determinism. Unlike in the previous papers, here, the authors are focusing to improve the metamorphic testing technique itself. They list some benefits of using metamorphic testing: it can be used on broader domain of applications that display metamorphic properties, and it treats the application under test as a black box and does not require detailed understanding of the source code. They then list some of the limitations of using metamorphic testing:
 		\begin{itemize}
 			\item	Manual transformation of large input data can be laborious and error-prone. They need special tools to transform the input.
@@ -48,5 +48,5 @@
 
 		Automated Metamorphic System Testing: This technique can be used to test the application in development environment as well as in production as long as the users are only provided the output from the original execution and not the result from transformed input. In this model $i)$ Metamorphic properties are specified by the tester and applied to the input. $ii)$ The original input is fed into the application which is treated as a black-box and a transformation of the input is also generated. $iii)$ That transformed input is fed into a separate instance of the application running in a separate sandbox. $iv)$ When the invocations are finished, the results are compared and if they do not match according to the specifications, there is an error.
 		Tester need not write any code and only needs to specify the metamorphic properties. They don’t need to know the source code or other implementation details.
-		Amsterdam framework: The metamorphic properties are specified using XML file. The specification consist of three parts: $i)$ how to transform the input, $ii)$ how to execute the program, and, $iii)$ how to compare the outputs.\par
+		Amsterdam framework: The metamorphic properties are specified using XML file. The specification consists of three parts: $i)$ how to transform the input, $ii)$ how to execute the program, and, $iii)$ how to compare the outputs.\par
 		Heuristic Metamorphic testing: This method allows for small differences in outputs, in a meaningful way according to the application being used to address the problems of false positives and non-determinism. Imprecisions in floating point calculation and representation of irrational number such as may result in failure of metamorphic testing even if the implementation is correct. If two outputs are close enough they are considered the same. The definition of close enough depends on the application and in complex applications checking semantic similarity may also be required.
