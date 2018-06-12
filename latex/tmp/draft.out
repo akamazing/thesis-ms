@@ -1,0 +1,39 @@
+\BOOKMARK [0][-]{section*.1}{Contents}{}% 1
+\BOOKMARK [0][-]{section*.2}{List of Figures}{}% 2
+\BOOKMARK [0][-]{section*.3}{List of Tables}{}% 3
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 4
+\BOOKMARK [0][-]{chapter.2}{Literature Review}{}% 5
+\BOOKMARK [1][-]{section.2.1}{Testing in the Presence of Uncertainty Elbaum2014}{chapter.2}% 6
+\BOOKMARK [1][-]{section.2.2}{On Testing Non-testable Programs Weyuker}{chapter.2}% 7
+\BOOKMARK [1][-]{section.2.3}{Metamorphic Testing}{chapter.2}% 8
+\BOOKMARK [2][-]{subsection.2.3.1}{A Survey on Metamorphic Testing Segura2016}{section.2.3}% 9
+\BOOKMARK [3][-]{subsubsection.2.3.1.1}{Properties of good metamorphic relations}{subsection.2.3.1}% 10
+\BOOKMARK [3][-]{subsubsection.2.3.1.2}{Construction of metamorphic relations}{subsection.2.3.1}% 11
+\BOOKMARK [3][-]{subsubsection.2.3.1.3}{Generation of source test cases}{subsection.2.3.1}% 12
+\BOOKMARK [3][-]{subsubsection.2.3.1.4}{Execution of metamorphic test cases}{subsection.2.3.1}% 13
+\BOOKMARK [3][-]{subsubsection.2.3.1.5}{Application domains}{subsection.2.3.1}% 14
+\BOOKMARK [2][-]{subsection.2.3.2}{Automatic System Testing of Programs without Test Oracles Murphy2009}{section.2.3}% 15
+\BOOKMARK [1][-]{section.2.4}{Overview of Machine Learning Algorithms}{chapter.2}% 16
+\BOOKMARK [2][-]{subsection.2.4.1}{Supervised Sequence Labelling with Recurrent Neural Networks Graves}{section.2.4}% 17
+\BOOKMARK [1][-]{section.2.5}{Testing Machine Learning Programs}{chapter.2}% 18
+\BOOKMARK [2][-]{subsection.2.5.1}{Properties of Machine Learning Applications for Use in Metamorphic Testing Murphy}{section.2.5}% 19
+\BOOKMARK [2][-]{subsection.2.5.2}{Application of Metamorphic Testing to Supervised Classifiers Xie2009}{section.2.5}% 20
+\BOOKMARK [2][-]{subsection.2.5.3}{Dataset Coverage for Testing Machine Learning Computer Programs Nakajima2016}{section.2.5}% 21
+\BOOKMARK [0][-]{chapter.3}{Proposed Work}{}% 22
+\BOOKMARK [1][-]{section.3.1}{Setting up the Test Environment}{chapter.3}% 23
+\BOOKMARK [2][-]{subsection.3.1.1}{Jupyter}{section.3.1}% 24
+\BOOKMARK [2][-]{subsection.3.1.2}{Tensorflow}{section.3.1}% 25
+\BOOKMARK [2][-]{subsection.3.1.3}{MNIST Dataset}{section.3.1}% 26
+\BOOKMARK [3][-]{subsubsection.3.1.3.1}{Format of Dataset}{subsection.3.1.3}% 27
+\BOOKMARK [1][-]{section.3.2}{Subject Programs}{chapter.3}% 28
+\BOOKMARK [1][-]{section.3.3}{Identification of Metamorphic Relations}{chapter.3}% 29
+\BOOKMARK [1][-]{section.3.4}{Experimental Design}{chapter.3}% 30
+\BOOKMARK [2][-]{subsection.3.4.1}{Independent variables}{section.3.4}% 31
+\BOOKMARK [3][-]{subsubsection.3.4.1.1}{ML algorithms}{subsection.3.4.1}% 32
+\BOOKMARK [3][-]{subsubsection.3.4.1.2}{Metamorphic relations}{subsection.3.4.1}% 33
+\BOOKMARK [2][-]{subsection.3.4.2}{Dependent variables}{section.3.4}% 34
+\BOOKMARK [3][-]{subsubsection.3.4.2.1}{Hamming loss}{subsection.3.4.2}% 35
+\BOOKMARK [3][-]{subsubsection.3.4.2.2}{Digit accuracy}{subsection.3.4.2}% 36
+\BOOKMARK [0][-]{chapter.4}{Work Plan}{}% 37
+\BOOKMARK [0][-]{chapter.5}{Synthesis Matrix}{}% 38
+\BOOKMARK [0][-]{section*.5}{Bibliography}{}% 39
