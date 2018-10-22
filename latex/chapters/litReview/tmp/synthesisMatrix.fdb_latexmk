@@ -1,0 +1,11 @@
+# Fdb version 3
+["pdflatex"] 1527883090 "synthesisMatrix.tex" "tmp/synthesisMatrix.pdf" "synthesisMatrix" 1527883091
+  "/usr/local/texlive/2017basic/texmf-dist/web2c/texmf.cnf" 1494087824 32646 eadc4ca26cdbe7105ac7c593aa8c4f72 ""
+  "/usr/local/texlive/2017basic/texmf-var/web2c/pdftex/pdflatex.fmt" 1518149962 2588967 2c92e51cb8c8deac42a6f2e880fd63f3 ""
+  "/usr/local/texlive/2017basic/texmf.cnf" 1496851631 628 b344fac068e513a3e5fe2214c3a47398 ""
+  "synthesisMatrix.tex" 1527883090 7544 273a0507d5aeae4f346cefa6d26e0308 ""
+  "tmp/synthesisMatrix.aux" 1526968159 8 a94a2480d3289e625eea47cd1b285758 ""
+  (generated)
+  "tmp/synthesisMatrix.pdf"
+  "tmp//synthesisMatrix.log"
+  "tmp/synthesisMatrix.log"

@@ -1,0 +1,6 @@
+PWD /Users/akamazing/Documents/thesis-ms/latex/chapters/litReview
+INPUT /usr/local/texlive/2017basic/texmf.cnf
+INPUT /usr/local/texlive/2017basic/texmf-dist/web2c/texmf.cnf
+INPUT /usr/local/texlive/2017basic/texmf-var/web2c/pdftex/pdflatex.fmt
+INPUT synthesisMatrix.tex
+OUTPUT tmp//synthesisMatrix.log

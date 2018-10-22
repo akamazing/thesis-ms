@@ -1,0 +1,22 @@
+\BOOKMARK [0][-]{section*.1}{Contents}{}% 1
+\BOOKMARK [0][-]{section*.2}{List of Figures}{}% 2
+\BOOKMARK [0][-]{section*.3}{List of Tables}{}% 3
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 4
+\BOOKMARK [0][-]{chapter.2}{Literature Review}{}% 5
+\BOOKMARK [1][-]{section.2.1}{Testing Without Oracles}{chapter.2}% 6
+\BOOKMARK [1][-]{section.2.2}{Metamorphic Testing}{chapter.2}% 7
+\BOOKMARK [2][-]{subsection.2.2.1}{Automatic System Testing of Programs without Test Oracles}{section.2.2}% 8
+\BOOKMARK [1][-]{section.2.3}{Overview of Machine Learning Algorithms}{chapter.2}% 9
+\BOOKMARK [1][-]{section.2.4}{Testing Machine Learning Programs}{chapter.2}% 10
+\BOOKMARK [2][-]{subsection.2.4.1}{Properties of Machine Learning Applications for Use in Metamorphic Testing}{section.2.4}% 11
+\BOOKMARK [2][-]{subsection.2.4.2}{Application of Metamorphic Testing to Supervised Classifiers}{section.2.4}% 12
+\BOOKMARK [2][-]{subsection.2.4.3}{Dataset Coverage for Testing Machine Learning Computer Programs}{section.2.4}% 13
+\BOOKMARK [0][-]{chapter.3}{Proposed Work}{}% 14
+\BOOKMARK [1][-]{section.3.1}{Setting up the Test Environment}{chapter.3}% 15
+\BOOKMARK [2][-]{subsection.3.1.1}{Docker}{section.3.1}% 16
+\BOOKMARK [2][-]{subsection.3.1.2}{Jupyter}{section.3.1}% 17
+\BOOKMARK [2][-]{subsection.3.1.3}{Tensorflow}{section.3.1}% 18
+\BOOKMARK [2][-]{subsection.3.1.4}{MNIST Dataset}{section.3.1}% 19
+\BOOKMARK [3][-]{subsubsection.3.1.4.1}{Format of Dataset}{subsection.3.1.4}% 20
+\BOOKMARK [1][-]{section.3.2}{Selection of Implementations to Test}{chapter.3}% 21
+\BOOKMARK [0][-]{chapter.4}{Work Plan}{}% 22
