@@ -78,3 +78,20 @@ xxxx  &   unsigned byte  & ??          &     pixel \\
 \caption{Test data file format.}
 \label{tbl:test-file-format}
 \end{table}
+
+\subsection{EMNIST Dataset}
+The EMNIST dataset is a set of handwritten character digits derived from the NIST Special Database 19
+and converted to a 28x28 pixel image format and dataset structure that directly matches the MNIST dataset.
+
+\subsubsection{Dataset Summary}
+There are six different splits provided in this dataset. A short summary of the dataset is provided below:
+\begin{itemize}
+  \item EMNIST ByClass: 814,255 characters. 62 unbalanced classes.
+  \item EMNIST ByMerge: 814,255 characters. 47 unbalanced classes.
+  \item EMNIST Balanced:  131,600 characters. 47 balanced classes.
+  \item EMNIST Letters: 145,600 characters. 26 balanced classes.
+  \item EMNIST Digits: 280,000 characters. 10 balanced classes.
+  \item EMNIST MNIST: 70,000 characters. 10 balanced classes.
+\end{itemize}
+The full complement of the NIST Special Database 19 is available in the ByClass and ByMerge splits. The EMNIST Balanced dataset contains a set of characters with an equal number of samples per class.
+The EMNIST Letters dataset merges a balanced set of the uppercase and lowercase letters into a single 26-class task. The EMNIST Digits and EMNIST MNIST dataset provide balanced handwritten digit datasets directly compatible with the original MNIST dataset.
