@@ -1,93 +1,9 @@
+from include import *
 
-# coding: utf-8
-
-# In[1]:
-
-
-from __future__ import division, print_function, absolute_import
-
-# Import MNIST data
-import os
-import enum
-import pickle
-import logging
-import shutil, sys                                                                                                                                                    
-import numpy as np
-import tensorflow as tf
-from matplotlib import pyplot
-from keras import backend as K
-import matplotlib.pyplot as plt
-from matplotlib.pyplot import figure
-#from keras.datasets import mnist
-#from keras.datasets import fashion_mnist
-from keras.preprocessing.image import ImageDataGenerator
-from tensorflow.examples.tutorials.mnist import input_data
-
-K.set_image_dim_ordering('th')
-logging.getLogger("tensorflow").setLevel(logging.INFO)
-
-mnist = input_data.read_data_sets("data/digit", one_hot=False)
-
-Shade = "Shade"
-Rotate = "Rotate"
-Shear = "Shear"
-ShiftX = "ShiftX"
-ShiftY = "ShiftY"
-Test = "Test"
-Train = "Train"
-# Training Parameters
-mnist = input_data.read_data_sets("data/digit", one_hot=False)
-# Training Parameters
-learning_rate = 0.01
-num_steps = 500
-batch_size = 128
-
-# Network Parameters
-n_hidden_1 = 256 # 1st layer number of neurons
-n_hidden_2 = 256 # 2nd layer number of neurons
-num_input = 784 # MNIST data input (img shape: 28*28)
-num_classes = 10 # MNIST total classes (0-9 digits)
-dropout = 0.25 # Dropout, probability to drop a unit
-num_images = 1000
-
-# Load the Mnist test data
-xTmp = mnist.test.images
-yTmp = mnist.test.labels
-yT = []
-xT = []
-for n in range(num_classes):
-    train_filter = np.isin(yTmp, [n])
-    x, y = xTmp[train_filter], yTmp[train_filter]
-    yT.append(list(y[:num_images]))
-    xT.append(x[:num_images])
-yTmp = [i for l in yT for i in l]
-xT = np.array(xT)
-xTmp = np.concatenate(xT)
-xTmp = xTmp.reshape(xTmp.shape[0], 1, 28, 28)
-# # convert from int to float
-xTmp = xTmp.astype('float32')
-xTest = []
-for x in xTmp:
-    xTest.append(np.transpose(x))
-xTest = np.array(xTest)
-yTest = yTmp
-xTestBackup = xTest.copy()
-yTestBackup = yTmp.copy()
-
-# Load the Mnist test data
-xTmp = mnist.train.images
-yTmp = list(mnist.train.labels)
-xTmp = xTmp.reshape(xTmp.shape[0], 1, 28, 28)
-# # convert from int to float
-xTmp = xTmp.astype('float32')
-xTrain = []
-for x in xTmp:
-    xTrain.append(np.transpose(x))
-xTrain = np.array(xTrain)
-yTrain = yTmp
-xTrainBackup = xTrain.copy()
-yTrainBackup = yTmp.copy()
-# Create the neural network
+xTestBackup = []
+yTestBackup = []
+xTrainBackup = []
+yTrainBackup = []
 
 def conv_net(x_dict, n_classes, dropout, reuse, is_training):
     
@@ -276,8 +192,7 @@ def Transform( xData, yData, tType, value ): # yData is not bein transformed
     if tType == "Shade":
         Xnew = [[[[v-value if v-value>0.0 else 0.0 for v in n] for n in x[0]]] for x in xData]
         Xnew = np.array(Xnew)
-        xData[:] = Xnew.astype('float32')
-        return;
+        xTemp = Xnew.astype('float32')
 
     # tType = 2 for rotation
     if tType == "Rotate":
@@ -313,7 +228,11 @@ def Transform( xData, yData, tType, value ): # yData is not bein transformed
         #xData[:] = xBatch
         #yData[:] = yBatch
         #break
-    xData[:] = xTemp
+    xTmp = []
+    for x in xTemp:
+        xTmp.append(np.transpose(x))
+    xTmp = np.array(xTmp)
+    return xTmp
 
 
 # In[ ]:
@@ -395,13 +314,56 @@ def processResults (predMatrix, yMatrix):
 
 
 # In[ ]:
+def getAccuracyPlot(MT, accMatrix):
+    figure(num=None, figsize=(14, 14), dpi=80, facecolor='w', edgecolor='k')
+    m = len(accMatrix)
+    plt.axis([-m/2, m/2, 0, 1])
+    plt.plot(np.arange(-m/2,m/2,1),accMatrix)
+    plt.xlabel("Value")
+    if (MT==Rotate or MT==Shear):
+        plt.xlabel("Angle")
+    plt.ylabel("Accuracy")
+    #plt.suptitle("MR: "+str(MT))
+    plt.show()
+    return plt
+    
+def getAllAccuracyPlot(MT, accMatrix):
+    figure(num=None, figsize=(14, 14), dpi=80, facecolor='w', edgecolor='k')
+    m = len(accMatrix)
+    for j in range(num_classes):
+        zero = []
+        for i in range(len(accMatrix)):
+            zero.append(accMatrix[i][j][j])
+        plt.axis([-m/2, m/2, 0, 1])
+        plt.subplot(4,3,j+1)
+        plt.plot(np.arange(-m/2,m/2,1),zero)
+        plt.xlabel("Value")
+        if (MT==Rotate or MT==Shear):
+            plt.xlabel("Angle")
+        plt.ylabel("Accuracy")
+    #plt.suptitle("MR: "+str(MT))
+    plt.show()
+    return plt
 
-
-
-
-
-# In[ ]:
-
-
-
-
+def getMisclassificationPlot(MT, accMatrix):
+    m = len(accMatrix)
+    for j in range(num_classes):
+        figure(num=None, figsize=(18, 16), dpi=80, facecolor='w', edgecolor='k')
+        for k in range(0,num_classes):
+            zero = []
+            if j != k: 
+                for i in range(len(accMatrix)):
+                    zero.append(accMatrix[i][j][k])
+            else:
+                continue       
+            plt.subplot(4,3,k+1)
+            plt.axis([-m/2, m/2, 0, 1])
+            plt.plot(np.arange(-m/2,m/2,1),zero)
+            plt.xlabel("Value")
+            if (MT==Rotate or MT==Shear):
+                plt.xlabel("Angle")
+            plt.ylabel("Misclssified to %s" %str(k))
+        #plt.suptitle("Misclassification graph for %d" %(j))
+        plt.show()
+        print("---------------------------------------------------------------------------------------------------------------------")
+    return plt
