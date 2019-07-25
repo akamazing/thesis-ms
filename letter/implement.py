@@ -1,13 +1,5 @@
-# Training Parameters
-from include import *
-
-# Training Parameters
-mnist = input_data.read_data_sets("data/digit", one_hot=False)
-
 # Network Parameters
-num_classes = 10
-num_images = 1000
-from base_digit import *
+from base import *
 
 yMatrix = []
 predMatrix = []
@@ -29,8 +21,9 @@ for i in range(10):
     accuracyMatrixTemp = []
 
     for step in range(-50,50):
-        with open("variables/Transformations/"+str(MT)+"/"+str(step+50), 'rb') as f:
+        with open("data/"+str(MT)+"/"+str(step+50), 'rb') as f:
             [xTest, yTest] = pickle.load(f)
+        yTest = np.array(yTest)-1
         if Algo == NN:
             xTest = xTest.reshape(xTest.shape[0],  784)
         p,a = TestModel (model, xTest, yTest, False)
@@ -44,7 +37,7 @@ for i in range(10):
     accuracyMatrix.append(accuracyMatrixTemp)
     accMatrix.append(accMatrixTemp)
  
-fname = "variables/Output/Digit/"+Algo+"_"+str(MT)
+fname = "data/Output/"+Algo+"_"+str(MT)
 
 if (os.path.exists(fname)):
         os.remove(fname)
