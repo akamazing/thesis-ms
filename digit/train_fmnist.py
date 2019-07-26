@@ -1,10 +1,20 @@
-# Training Parameters
-from base import *
+from base_letter import *
+
 
 # Training Parameters
-mnist = input_data.read_data_sets("data/Original", one_hot=False)
+mnist = input_data.read_data_sets("data/letter", one_hot=False)
+# Training Parameters
+learning_rate = 0.01
+num_steps = 500
+batch_size = 128
 
-Algo = CNN
+# Network Parameters
+n_hidden_1 = 256 # 1st layer number of neurons
+n_hidden_2 = 256 # 2nd layer number of neurons
+num_input = 784 # MNIST data input (img shape: 28*28)
+num_classes = 26 # MNIST total classes (0-9 digits)
+dropout = 0.25 # Dropout, probability to drop a unit
+n_images = 10000
 
 # Load the Mnist test data
 xTmp = mnist.test.images
@@ -16,7 +26,6 @@ xTest = []
 for x in xTmp:
     xTest.append(np.transpose(x))
 xTest = np.array(xTest)
-xTest = xTest.reshape(xTest.shape[0],  784)
 yTest = yTmp
 xTestBackup = xTest.copy()
 yTestBackup = yTmp.copy()
@@ -31,21 +40,18 @@ xTrain = []
 for x in xTmp:
     xTrain.append(np.transpose(x))
 xTrain = np.array(xTrain)
-xTrain = xTrain.reshape(xTrain.shape[0],  784)
 yTrain = yTmp
 xTrainBackup = xTrain.copy()
 yTrainBackup = yTmp.copy()
 
-for i in range(10):
-   
-    model_dir = "models/"+Algo+"/TrainedModel"+str(i)
-    #model_dir = "models/Test"+str(i)
+for i in range(10):   
+    model_dir = "models/CNN/fmnist/TrainedModel"+str(i)
     if (os.path.exists(model_dir)):
         shutil.rmtree(model_dir)
-    if Algo == "CNN":
-        model = tf.estimator.Estimator(model_fn, model_dir=model_dir)
-    elif Algo == "NN":
-        model = tf.estimator.Estimator(nn_model_fn, model_dir=model_dir)
+    model = tf.estimator.Estimator(model_fn, model_dir=model_dir)
+
+    reloadData(Train)
+    reloadData(Test)
 
     TrainModel (model, xTrain, yTrain, False)
     p,a = TestModel (model, xTest, yTest, False)

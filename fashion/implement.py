@@ -10,7 +10,7 @@ MT = sys.argv[2]
 Algo = sys.argv[1]
 
 for i in range(10):
-    model_dir = "models/"+Algo+"/TrainedModel"+str(i)
+    model_dir = "models/"+Algo+"/mnist/TrainedModel"+str(i)
     #model_dir = "models/Test"+str(i)
     if Algo == "CNN":
         model = tf.estimator.Estimator(model_fn, model_dir=model_dir)

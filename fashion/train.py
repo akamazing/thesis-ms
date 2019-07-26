@@ -4,7 +4,7 @@ from base import *
 # Training Parameters
 mnist = input_data.read_data_sets("data/Original", one_hot=False)
 
-Algo = CNN
+Algo = NN
 
 # Load the Mnist test data
 xTmp = mnist.test.images
@@ -38,7 +38,7 @@ yTrainBackup = yTmp.copy()
 
 for i in range(10):
    
-    model_dir = "models/"+Algo+"/TrainedModel"+str(i)
+    model_dir = "models/"+Algo+"/mnist/TrainedModel"+str(i)
     #model_dir = "models/Test"+str(i)
     if (os.path.exists(model_dir)):
         shutil.rmtree(model_dir)

@@ -4,11 +4,9 @@ from base import *
 # Training Parameters
 mnist = input_data.read_data_sets("data/Original", one_hot=False)
 
-Algo = CNN
-
 # Load the Mnist test data
 xTmp = mnist.test.images
-yTmp = list(mnist.test.labels-1)
+yTmp = list(mnist.test.labels)
 xTmp = xTmp.reshape(xTmp.shape[0], 1, 28, 28)
 # # convert from int to float
 xTmp = xTmp.astype('float32')
@@ -23,7 +21,7 @@ yTestBackup = yTmp.copy()
 
 # Load the Mnist test data
 xTmp = mnist.train.images
-yTmp = list(mnist.train.labels-1)
+yTmp = list(mnist.train.labels)
 xTmp = xTmp.reshape(xTmp.shape[0], 1, 28, 28)
 # # convert from int to float
 xTmp = xTmp.astype('float32')
@@ -35,6 +33,8 @@ xTrain = xTrain.reshape(xTrain.shape[0],  784)
 yTrain = yTmp
 xTrainBackup = xTrain.copy()
 yTrainBackup = yTmp.copy()
+
+Algo = CNN
 
 for i in range(10):
    

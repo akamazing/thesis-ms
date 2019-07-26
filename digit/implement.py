@@ -6,8 +6,8 @@ predMatrix = []
 accuracyMatrix = []
 accMatrix = []
 
-MT = sys.argv[2]
 Algo = sys.argv[1]
+MT = sys.argv[2]
 
 for i in range(10):
     model_dir = "models/"+Algo+"/TrainedModel"+str(i)
@@ -23,7 +23,7 @@ for i in range(10):
     for step in range(-50,50):
         with open("data/"+str(MT)+"/"+str(step+50), 'rb') as f:
             [xTest, yTest] = pickle.load(f)
-        yTest = np.array(yTest)-1
+        yTest = np.array(yTest)
         if Algo == NN:
             xTest = xTest.reshape(xTest.shape[0],  784)
         p,a = TestModel (model, xTest, yTest, False)
@@ -43,5 +43,6 @@ if (os.path.exists(fname)):
         os.remove(fname)
 with open(fname, 'wb') as f:
     pickle.dump([yMatrix, predMatrix, accuracyMatrix, accMatrix], f)
+
 
 
