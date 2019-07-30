@@ -467,8 +467,7 @@ def getAllAccuracyMatrix(accMatrix):
     for x in range(len(accM)):
         for y in range(len(accM[0])):
             for z in range(len(accM[0][0])):
-                accM[x][y][z] = accM[x][y][z]/len(accMatrix)
-    
+                accM[x][y][z] = accM[x][y][z]/len(accMatrix)    
     return accM
 def getConfusionMatrix(accMatrix):
     accM = []
@@ -492,6 +491,7 @@ def getConfusionMatrix(accMatrix):
         confMat.append(cM)
     return confMat
 
+# the same as scikit.learn. confusion_matrix
 def getAllConfusionMatrix (predMatrix, yMatrix):
     accMatrix = [[0]*num_classes for x in range(num_classes)] 
     for x in range(len(yMatrix[0][0])):
